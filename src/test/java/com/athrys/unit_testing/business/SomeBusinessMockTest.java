@@ -3,16 +3,17 @@ package com.athrys.unit_testing.business;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.athrys.unit_testineg.data.SomeDataService;
+import com.athrys.unit_testing.data.SomeDataService;
 
-@RunWith(MockitoJUnitRunner.class)
+
+@ExtendWith(SpringExtension.class)
 public class SomeBusinessMockTest {
 
 	@Mock
@@ -23,7 +24,7 @@ public class SomeBusinessMockTest {
 	private SomeBusinessImpl business = new SomeBusinessImpl();
 
 	
-	@Before
+	@BeforeEach
 	public void before() {
 		System.out.println("TESTING!");
 	}
