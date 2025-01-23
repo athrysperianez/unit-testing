@@ -1,19 +1,15 @@
 package com.athrys.unit_testing.business;
 
+import java.util.Arrays;
+
 import com.athrys.unit_testing.data.SomeDataService;
 
 public class SomeBusinessImpl {
 
 	private SomeDataService someDataService;
-	
+
 	public int calculateSum(int[] data) {
-		int sum = 0;
-		
-		for(int value:data) {
-			sum+=value;
-		}
-		
-		return sum;
+		return Arrays.stream(data).reduce(Integer::sum).orElse(0);
 	}
 	
 	public int calculateSumUsingDataService() {
